@@ -62,5 +62,21 @@ var Service = {
             }
         });
         return deferred.promise();
+    },
+    getProductsById : function(id){
+        var deferred = new $.Deferred();
+        $.ajax({
+            url: "https://soaproductapi.herokuapp.com/products",
+            cache: false,
+            type: "GET",
+            success: function(data){
+             if (data) {
+                 deferred.resolve("Done", data[id-1])
+             }else{
+                 deferred.resolve("Error")
+             }
+            }
+        });
+        return deferred.promise();
     }
 }
