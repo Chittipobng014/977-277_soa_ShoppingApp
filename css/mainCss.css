@@ -1,0 +1,33 @@
+.productPhoto{
+    width: 150px;
+    height: 150px;
+}
+
+.center{
+    text-align: center;
+}
+
+.page__content{
+    top: 56px;
+    bottom: 56px
+}
+
+.toolbar--material{
+    background: #330066;    
+    background: -webkit-linear-gradient(left,#330066 , #CC3300);
+    background: -o-linear-gradient(right, #330066, #CC3300); 
+    background: -moz-linear-gradient(right, #330066, #CC3300); 
+    background: linear-gradient(to right, #330066 , #CC3300);
+    margin: 0px;
+    
+}
+
+.bottom-bar{
+    background: #330066;    
+    background: -webkit-linear-gradient(left,#330066 , #CC3300);
+    background: -o-linear-gradient(right, #330066, #CC3300); 
+    background: -moz-linear-gradient(right, #330066, #CC3300); 
+    background: linear-gradient(to right, #330066 , #CC3300);
+    margin: 0px;
+    height: 56px;
+}
