@@ -1,16 +1,25 @@
 ons.platform.select('ios');
+var productData;
 $(function () {
-  Service.getProducts().then(function (message, datas) {
-    datas.forEach(data => {
-      if (data.id % 2) {
-        var template = $('#productsTemplate').html();
-        var rendered = Mustache.render(template, data);
-        $('#resultsCol1').append(rendered);
-      }else{
-        var template = $('#productsTemplate').html();
-        var rendered = Mustache.render(template, data);
-        $('#resultsCol2').append(rendered);
-      }      
-    });
+  Service.getProducts().then(function (message, datas) { // Get  all Products
+      datas.forEach(data => {
+        if (data.productID % 2) { // To Seperate column of product template
+          var template = $('#productsTemplate').html();
+          var rendered = Mustache.render(template, data);
+          $('#resultsCol1').append(rendered); // To render the template to target
+        }else{
+          var template = $('#productsTemplate').html();
+          var rendered = Mustache.render(template, data);
+          $('#resultsCol2').append(rendered); // To render the template to target
+        }      
+      });
   });
+  Service.getReviews().then(function(message, datas){
+    datas.forEach(data => {
+      console.log(data);
+      var template = $("#ratingTemplate").html();
+      var rendered = Mustache.render(template, data);
+      $("#ratingTarget").append(rendered);
+    }); 
+  })
 })
