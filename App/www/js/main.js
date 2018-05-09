@@ -13,13 +13,5 @@ $(function () {
           $('#resultsCol2').append(rendered); // To render the template to target
         }      
       });
-  });
-  Service.getReviews().then(function(message, datas){
-    datas.forEach(data => {
-      console.log(data);
-      var template = $("#ratingTemplate").html();
-      var rendered = Mustache.render(template, data);
-      $("#ratingTarget").append(rendered);
-    }); 
-  })
+  });  
 })
