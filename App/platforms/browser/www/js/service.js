@@ -1,3 +1,6 @@
+function getSum(total, num) {
+    return total + num;
+}
 var Service = {
     getProducts : function(){
         var deferred = new $.Deferred();
@@ -7,7 +10,7 @@ var Service = {
             type: "GET",
             success: function(data){
              if (data) {
-                var json = JSON.parse(data)
+                var json = JSON.parse(data)              
                 deferred.resolve("Done", json)
              }else{
                 deferred.resolve("Error")
@@ -23,11 +26,11 @@ var Service = {
             cache: false,
             type: "GET",
             success: function(data){
-             if (data) {
-                 deferred.resolve("Done", data)
-             }else{
-                 deferred.resolve("Error")
-             }
+                if (data) {  
+                    deferred.resolve("Done", data)
+                 }else{
+                    deferred.resolve("Error")
+                 }
             }
         });
         return deferred.promise();
@@ -35,7 +38,7 @@ var Service = {
     getCustomers : function(){
         var deferred = new $.Deferred();
         $.ajax({
-            url: "https://customer-api-shopping.herokuapp.com/api/customers",
+            url: "https://customer-api-shopping.herokuapp.com/api/customers/",
             cache: false,
             type: "GET",
             success: function(data){
@@ -79,6 +82,27 @@ var Service = {
              }
             }
         });
+        return deferred.promise();
+    },
+    addCustomer : function(data){
+        var deferred = new $.Deferred();
+        $.ajax({
+            headers: { 
+                'Accept': 'application/json',
+                'Content-Type': 'application/json' 
+            },
+            url : "https://customer-api-shopping.herokuapp.com/api/customers/",
+            type : "POST",
+            data : JSON.stringify(data),
+            dataType : "json",
+            success: function(data) {
+                if (data) {
+                    deferred.resolve("Done")
+                }else{
+                    deferred.resolve("Fail")
+                }
+            }
+        })
         return deferred.promise();
     }
 }

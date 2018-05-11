@@ -16,33 +16,22 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-var app = {
-    // Application Constructor
-    initialize: function() {
-        document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
-    },
+ons.ready(function(){
+     // Initialize Firebase
+     var config = {
+        apiKey: "AIzaSyCtTrU-eOn5EthGjKcDuoE0OSYDiRU0dmo",
+        authDomain: "soa-shoppingapp.firebaseapp.com",
+    };
+    firebase.initializeApp(config);
 
-    // deviceready Event Handler
-    //
-    // Bind any cordova events here. Common events are:
-    // 'pause', 'resume', etc.
-    onDeviceReady: function() {
-        this.receivedEvent('deviceready');
-    },
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            ons.notification.toast('Welcome, ' + user.displayName, { timeout: 2000 }).then(function (name) {
+                window.location.replace('home.html?userid=' + user.email);
+            });
+        } else {
+            window.location.replace('login.html');
+        }
+    });
 
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        window.location.replace('home.html');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
-    }
-};
-
-app.initialize();
+})
