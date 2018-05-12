@@ -17,7 +17,7 @@
  * under the License.
  */
 ons.ready(function(){
-    universalLinks.subscribe('linkFunctionHandler',linkFunctionHandler);
+    
      // Initialize Firebase
      var config = {
         apiKey: "AIzaSyCtTrU-eOn5EthGjKcDuoE0OSYDiRU0dmo",
