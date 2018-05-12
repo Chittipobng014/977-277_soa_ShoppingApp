@@ -1,5 +1,10 @@
 ons.ready(function () {
-
+    var config = {
+        apiKey: "AIzaSyCtTrU-eOn5EthGjKcDuoE0OSYDiRU0dmo",
+        authDomain: "soa-shoppingapp.firebaseapp.com",
+        projectId: "soa-shoppingapp",
+    };
+    firebase.initializeApp(config);
     var provider = new firebase.auth.FacebookAuthProvider();
 
     $("#signin").click(function () {

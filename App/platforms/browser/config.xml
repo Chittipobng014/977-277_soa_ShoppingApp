@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>HelloCordova</name>
+<widget id="soa.shoppingapp.DutyChargeShop" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>DutyChargeShop</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        Online Shopping App
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="sminko1599@gmail.com" href="https://github.com/Chittipobng014">
+        Sminko1599
     </author>
     <content src="index.html" />
     <access origin="*" />
@@ -15,4 +15,10 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <universal-links>
+        <host name="vp55u.app.goo.gl" scheme="https" />
+        <host name="soa-shoppingapp.firebaseapp.com" scheme="https">
+            <path url="/__/auth/callback" />
+        </host>
+    </universal-links>
 </widget>

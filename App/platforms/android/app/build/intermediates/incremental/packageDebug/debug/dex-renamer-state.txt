@@ -1,0 +1,4 @@
+#Sat May 12 12:06:22 ICT 2018
+base.0=D\:\\SOA term Project\\App\\shoppingApp\\App\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+renamed.0=classes.dex
+file.0=D\:\\SOA term Project\\App\\shoppingApp\\App\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0\\classes.dex

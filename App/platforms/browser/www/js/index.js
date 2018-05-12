@@ -17,11 +17,14 @@
  * under the License.
  */
 ons.ready(function(){
+    universalLinks.subscribe('linkFunctionHandler',linkFunctionHandler);
      // Initialize Firebase
      var config = {
         apiKey: "AIzaSyCtTrU-eOn5EthGjKcDuoE0OSYDiRU0dmo",
         authDomain: "soa-shoppingapp.firebaseapp.com",
+        projectId: "soa-shoppingapp",
     };
+
     firebase.initializeApp(config);
 
     firebase.auth().onAuthStateChanged(function(user) {
